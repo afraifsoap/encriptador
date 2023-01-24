@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prueba.css">
+    <link rel="shortcut icon" href="kisspng-logo-computer-icons-clip-art-white-hat-hacker-icon-5b501129bee196.7461762215319739297819.ico" type="image/x-icon">
+    <title>contacto</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            ENCRIPTADOR
+        </div>
+        <nav>
+            <a href="prueba.html">presentacion</a>
+            <a href="prueba.html">encriptacion</a>
+            <a href="contacto.html">contacto</a>
+        </nav>
+    </header>
+     
+    <main>
+    <form >
+        <fieldset>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre"  class="input-principal" required placeholder="Pancho">
+        
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" class="input-principal" required placeholder="pancho@yahoo.com">
+        
+        <label for="telefono">Telefono</label>
+        <input type="tel" id="telefono" class="input-principal" required placeholder="(XX)XXXXXXXX">
+        
+        <label for="mensaje">Mensaje</label>
+        <textarea name="popo" id="mensaje" cols="70" rows="10" class="input-principal"></textarea>
+    </fieldset>
+    <fieldset>
+        <legend>¿Como le gustaria su informacion?</legend>
+            
+        <label for="radio-email"><input type="radio" name="contacto" value="email" id="radio-email" >Email</label>
+        
+        <label for="radio-telefono"><input type="radio" name="contacto" value="telefono" id="radio-telefono" >Telefono</label>
+       
+        <label for="radio-whats"><input type="radio" name="contacto" value="WathsApp" id="radio-whats" checked>WathsApp</label>
+        
+        </fieldset>
+        <fieldset>
+        <legend>¿En que horario quiere ser atendido?</legend>
+       <select name="" id="">
+        <option value="">Mañana</option>
+        <option value="">Tarde</option>
+        <option value="">Noche</option>
+       </select>
+        </fieldset>
+        <label class="checkbox-1"><input type="checkbox" checked>¿Le gustaria recibir novedades ?</label>
+        <input type="submit" value="Enviar formulario" class="enviar">
+    
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>DÍA</th>
+                <th>Horario</th>
+            </tr>
+        </theadh>
+        <tbody>
+        <tr>
+            <td>Lunes</td>
+            <td>08h - 20h</td>
+        </tr>
+        <tr>
+            <td>Miércoles</td>
+            <td>08h - 20h</td>
+        </tr>
+        <tr>
+            <td>Viernes</td>
+            <td>08h - 20h</td>
+        </tr>
+        </tbody>
+    </table>
+    
+    </main>
+    <footer>
+        <p>¢ Copyright encriptador 2022</p>
+    </footer>
+</body>
+</html>

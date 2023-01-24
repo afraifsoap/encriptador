@@ -1,0 +1,96 @@
+window.addEventListener("scroll", function(){
+    var header = document.querySelector("header");
+    header.classList.toggle("abajo", window.scrollY>0);
+})
+const paste = document.getElementById("texto-inicial")
+let writing = str => {
+    let i = 0;
+    let arrFromStr = str.split('');
+    let printStr = setInterval(function(){
+        paste.innerHTML += arrFromStr[i];
+        i++;
+        if(i === arrFromStr.length){
+            clearInterval(printStr);
+        }
+    },400);
+};
+writing('Criptografía');
+
+const paste1 = document.getElementById("funcionamiento")
+let writing1 = str => {
+    let i = 0;
+    let arrFromStr = str.split('');
+    let printStr = setInterval(function(){
+        paste1.innerHTML += arrFromStr[i];
+        i++;
+        if(i === arrFromStr.length){
+            clearInterval(printStr);
+        }
+    },400);
+};
+writing1('Como funciona');
+const paste2 = document.getElementById("cifrado")
+let writing2 = str => {
+    let i = 0;
+    let arrFromStr = str.split('');
+    let printStr = setInterval(function(){
+        paste2.innerHTML += arrFromStr[i];
+        i++;
+        if(i === arrFromStr.length){
+            clearInterval(printStr);
+        }
+    },400);
+};
+writing2('Encriptacion');
+
+
+
+const alfabeto =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+const inputOriginal=document.getElementById('input-original');
+const cifrador=document.getElementById('cifrador');
+const resultado=document.getElementById('resultado');
+const rango=document.getElementById('rango');
+            
+const shifMessage=()=>{
+        const wordArray = [...inputOriginal.value.toUpperCase()];
+            printChar(0,wordArray);
+        }
+    
+        const printChar=(currentLetterIndex, wordArray)=>{
+            if(wordArray.length === currentLetterIndex) return;
+            inputOriginal.value=inputOriginal.value.substring(1)
+            const spanChar=document.createElement("span");
+            resultado.appendChild(spanChar);
+            animateChar(spanChar)
+            .then(()=>{
+                const charSinCodificar =wordArray[currentLetterIndex];
+            spanChar.innerHTML = alfabeto.includes(charSinCodificar)?
+            alfabeto[(alfabeto.indexOf(charSinCodificar)+ parseInt(rango.value))% alfabeto.length]:
+            charSinCodificar
+            printChar(currentLetterIndex+1,wordArray) 
+             });
+                
+    
+        }
+        const animateChar=spanChar=>{
+            let cambiosDeLetra =0;
+            return new Promise(resolve=>{
+                 const intervalo = setInterval(()=>{
+                    spanChar.innerHTML = alfabeto[Math.floor(Math.random()* alfabeto.length)];
+                    cambiosDeLetra++;
+                    if(cambiosDeLetra === 3){
+                        clearInterval(intervalo);
+                        resolve();
+                    }
+    
+                },50);
+             });
+         }
+    
+            const submit =e => {
+                e.preventDefault();
+                resultado.innerHTML='';
+                shifMessage()
+            }
+    
+            cifrador.onsubmit=submit;
